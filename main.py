@@ -1,6 +1,7 @@
 import math
 
 def main(n):
+    n -= 1 # Just makes it right dont ask
     out = [[1]] # Initalise the first element in the list
     lastLn = out[0] # Last line is a variable used to keep track of the last line that we created since we need it to make the next line
 
@@ -24,7 +25,7 @@ def main(n):
     if maxDist % 2 == 1: # If the max distance is odd we make it even
         maxDist += 1 # Here we add one to max dist to make it an even number
 
-    printLines = ["".join([f"{x:<{maxDist}}" for x in y]) for y in out] # Genarate all the strings we need to print
+    printLines = ["".join([f"{x:^{maxDist}}" for x in y]) for y in out] # Genarate all the strings we need to print
 
     indx = n # Keep track of the amount of lines left
     for i in printLines: # Loop over the strings we need to print
